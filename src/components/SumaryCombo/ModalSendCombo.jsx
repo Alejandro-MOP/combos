@@ -30,7 +30,7 @@ const ModalSendCombo = ({ idCombo, toggle, modal, clearIdLimitComboStore, clearD
 			clearExclusionsAndInclusionsStore();
 			clearMaterialsStore();
 			clearAllIndexViews();
-			history.push('/');
+			history.push('/combos-generator');
 		}, 1000);
 	};
 

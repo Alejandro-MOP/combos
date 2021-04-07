@@ -22,7 +22,7 @@ const ModalCreateLimit = ({ modal, setModal, toggle, id}) => {
 	const handleClick = () => {
         toggle();
         setTimeout(() => {
-			history.push('/crear-combo');
+			history.push('/combos-generator/crear-combo');
         }, 700);
     }
 

@@ -40,17 +40,20 @@ const useStyles = makeStyles(theme => ({
 	}
 }));
 
-const TableFilter = ({ name, value, onChange, searchBy }) => {
+const TableFilter = ({ name, value, onChange, searchBy, backgroundInput='' }) => {
 	const classes = useStyles();
 
 	return (
-		<Paper component='form' className={classes.root}>
+		<Paper component='form' className={classes.root} style={{backgroundColor: backgroundInput}}>
 			<InputBase
 				className={classes.input}
 				placeholder={searchBy ?`Ingresa tu búsqueda por ${ searchBy }` :'Ingresa tu búsqueda'}
 				name={name}
 				value={value}
 				onChange={onChange}
+				style={{
+					backgroundColor: backgroundInput
+				}}
 			/>
 			<IconButton type='submit' className={classes.iconButton} disabled>
 				<SearchIcon style={{ color: 'rgba(0, 0, 0, 0.84)' }} />

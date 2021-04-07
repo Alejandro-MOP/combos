@@ -45,7 +45,7 @@ const Head = () => {
 		<>
 			<Row className='mt-1 nav d-flex flex-nowrap justify-content-center' style={{ height: '55px' }}>
 				<Col xs='4' sm='4'>
-					<Link to={'/'} style={{ textDecoration: 'none' }} onClick={clearStore}>
+					<Link to={'/combos-generator'} style={{ textDecoration: 'none' }} onClick={clearStore}>
 						<h1 className='combos-generator text-center mb-0 mt-3'>
 							Combos Generator
 						</h1>

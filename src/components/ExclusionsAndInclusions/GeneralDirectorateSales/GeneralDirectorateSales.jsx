@@ -16,7 +16,7 @@ import { FormControlLabel, Checkbox, Radio } from '@material-ui/core'
 import DataTable from 'react-data-table-component'
 
 import  './GeneralDirectorateSales.css';
-import { Spinner, AlertGeneric } from '../../index';
+import { AlertGeneric } from '../../index';
 import TableFilter from '../TableFilter'
 import { filterGeneralDirectorateSales } from '../../../helpers/tableSearchRules'
 

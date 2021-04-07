@@ -2,10 +2,10 @@ import React from 'react';
 import { Col, Container, Row } from 'reactstrap';
 import { useHistory } from 'react-router-dom';
 
-import { Head, MainCard } from '../components';
-import mainLogo01 from '../assets/images/main/main01.png';
-import mainLogo02 from '../assets/images/main/main02.png';
-import mainLogo03 from '../assets/images/main/main03.png';
+import { /*Head,*/ MainCard } from '../../components';
+import mainLogo01 from '../../assets/images/main/main01.png';
+import mainLogo02 from '../../assets/images/main/main02.png';
+import mainLogo03 from '../../assets/images/main/main03.png';
 
 const Home = () => {
 
@@ -33,7 +33,7 @@ const Home = () => {
 							text={'Crear Límite y Combo'}
 							description={'Configura el ID límite y sus materiales desde cero'}
 							classNameHover={'main-card-green'}
-                            onClick={ () => history.push('crear-limite-combo') }
+                            onClick={ () => history.push('combos-generator/crear-limite-combo') }
 						/>
 					</Col>
 					<Col sm='4' md='4'>

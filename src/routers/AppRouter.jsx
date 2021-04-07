@@ -9,18 +9,20 @@
  *  No.         Date.        Author.      Description.
  *
  *
-*/
+ */
 import React from 'react';
-import { BrowserRouter as Router, Route, Switch } from 'react-router-dom';
+import { BrowserRouter as Router, Redirect, Route, Switch } from 'react-router-dom';
 
-import { Head, Nav } from '../components';
-import { CombosGeneratorRouter } from './index';
+import { CombosGeneratorRouter, RevenueRouter } from './index';
+
 
 const AppRouter = () => {
 	return (
 		<Router>
 			<Switch>
-				<Route path='/' component={CombosGeneratorRouter} />
+				<Route path='/combos-generator' component={CombosGeneratorRouter} />
+				<Route path='/' component={RevenueRouter} />
+				<Redirect to='/' />
 			</Switch>
 		</Router>
 	);

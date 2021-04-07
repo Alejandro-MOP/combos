@@ -14,7 +14,7 @@ import React, { useEffect, useState } from 'react';
 import { TabContent, TabPane, Nav, NavItem, NavLink, Button } from 'reactstrap';
 import { FormControlLabel, Checkbox } from '@material-ui/core';
 import classnames from 'classnames';
-import { useDispatch, useSelector } from 'react-redux';
+import { useDispatch } from 'react-redux';
 
 import './Customers.css';
 import TableFilter from '../TableFilter';

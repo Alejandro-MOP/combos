@@ -9,11 +9,11 @@ const DetailExclusionsInclusions = () => {
 		GET_regionalSalesDirectorate,
 		GET_salesOrganization,
 		GET_salesOffice,
-		GET_clients,
+		// GET_clients,
 		SET_regionalSalesDirectorate,
 		SET_salesOrganization,
 		SET_salesOffice,
-		SET_clientsExclusion,
+		// SET_clientsExclusion,
 		SET_clientsInclusion
 	} = exclusionsAndInclusions;
 
