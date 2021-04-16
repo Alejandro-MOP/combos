@@ -11,18 +11,36 @@ const RevenueRouter = () => {
 		<>
 
 			<Switch>
-				<Route exact path='/main/login' component={Login} />
-				<Route exact path='/main/country' component={SelectCountrys} />
-				<Route exact path='/main/start' component={GettingStart} />
+				<Route exact path='/main/login'>
+					<Login />
+					<footer className='px-4 py-1' style={{ height: '24px' }}>
+						<div className='d-flex justify-content-between'>
+							<p className='m-0 text-footer'>AB-INVEV</p>
+							<p className='m-0 text-footer'>{currentYear}</p>
+						</div>
+					</footer>
+				</Route>
+				<Route exact path='/main/country' >
+					<SelectCountrys />
+					<footer className='px-4 py-1' style={{ height: '24px' }}>
+						<div className='d-flex justify-content-between'>
+							<p className='m-0 text-footer'>AB-INVEV</p>
+							<p className='m-0 text-footer'>{currentYear}</p>
+						</div>
+					</footer>
+				</Route>
+				<Route exact path='/main/start' >
+					<GettingStart />
+					<footer className='px-4 py-1 ' style={{ height: '24px', backgroundColor:'#EFF1F8' }}>
+						<div className='d-flex justify-content-between'>
+							<p className='m-0 text-footer'>AB-INVEV</p>
+							<p className='m-0 text-footer'>{currentYear}</p>
+						</div>
+					</footer>
+				</Route>
 				<Redirect to='/main/login' />
 			</Switch>
 
-			<footer className='px-4 py-1' style={{ height: '24px' }}>
-				<div className='d-flex justify-content-between'>
-					<p className='m-0 text-footer'>AB-INVEV</p>
-					<p className='m-0 text-footer'>{currentYear}</p>
-				</div>
-			</footer>
 		</>
 	);
 };

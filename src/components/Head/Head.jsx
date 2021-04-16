@@ -46,13 +46,15 @@ const Head = () => {
 			<Row className='mt-1 nav d-flex flex-nowrap justify-content-center' style={{ height: '55px' }}>
 				<Col xs='4' sm='4'>
 					<Link to={'/combos-generator'} style={{ textDecoration: 'none' }} onClick={clearStore}>
-						<h1 className='combos-generator text-center mb-0 mt-3'>
+						<h1 className='combos-generator-head text-center mb-0 mt-3'>
 							Combos Generator
 						</h1>
 					</Link>
 				</Col>
 				<Col xs='4' sm='4' className='text-center'>
-					<img src={ABILogo} alt='ABInBev Logo' />
+					<Link to={'/main/start'} style={{ textDecoration: 'none' }} onClick={clearStore}>
+						<img src={ABILogo} alt='ABInBev Logo' />
+					</Link>
 				</Col>
 				<Col xs='4' sm='4' className='mt-3'>
 					<HeadMenu />

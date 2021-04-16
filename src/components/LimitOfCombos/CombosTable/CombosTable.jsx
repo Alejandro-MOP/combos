@@ -10,47 +10,93 @@
  *
  *
 */
-import React, { useState, useMemo, useEffect } from 'react';
+import React, { useEffect } from 'react';
 import { useDispatch, useSelector } from 'react-redux';
 import DataTable from 'react-data-table-component';
 
-import { optionsPagination, columnsCombosTable } from '../../../helpers/reactDataTable';
+import TrashIcon from '../../../assets/images/Trash.png';
+import { optionsPagination } from '../../../helpers/reactDataTable';
 import { customStylesCT } from '../../../helpers/styles';
-import TableFilter from './TableFilter';
 import { Spinner } from '../../index';
 import { getAllLimitOfCombosAction } from '../../../redux/actions/limitOfCombosActions';
-
+import { createIDLimitOfComboAction } from '../../../redux/actions/limitOfCombosActions.js';
+import { useHistory } from 'react-router';
 
 
 const CombosTable = () => {
+
+	const history = useHistory();
 
 	/*    Redux     */
     const dispatch = useDispatch();
 	const limitsOfCombos = useSelector(state => state.limitOfCombos.limitsOfCombos);
 	const loading = useSelector(state => state.limitOfCombos.loading);
     const getLimitsCombos = () => dispatch(getAllLimitOfCombosAction());
+	const currentIDlimitOfCombo = id => dispatch(createIDLimitOfComboAction(id));
 
 	/*    Local State     */
-	const [filterText, setFilterText] = useState('');
-	const [resetPaginationToggle, setResetPaginationToggle] = useState(false);
 
 	useEffect(() => {
 		getLimitsCombos();
 		// eslint-disable-next-line react-hooks/exhaustive-deps
 	}, []);
 
-	const subHeaderComponentMemo = useMemo(() => {
-		const handleClear = () => {
-			if (filterText) {
-				setResetPaginationToggle(!resetPaginationToggle);
-				setFilterText('');
-			}
-		};
+	const createCombo = idLimitOfCombo => {
+		currentIDlimitOfCombo(idLimitOfCombo);
+		history.push('/combos-generator/crear-combo');
+	}
 
-		return (
-			<TableFilter onFilter={e => setFilterText(e.target.value)} onClear={handleClear} filterText={filterText} />
-		);
-	}, [filterText, resetPaginationToggle]);
+	const columnsCombosTable = [
+		{ name: '', selector: 'id', sortable: true, width: '5rem', center: true },
+		{ name: 'ID Límite', selector: 'IdLimite', sortable: true },
+		{ name: 'Nivel del Combo', selector: 'nivelCombo', sortable: true, width: '15rem' },
+		{ name: 'Estructura de Ventas', selector: 'estructuraVenta', sortable: true, width: '12rem' },
+		{ name: 'Combos Permitidos', selector: 'combosPermitidos', wrap: true, sortable: true, center: true, width: '11rem' },
+		{ name: 'Combos Disponibles', selector: 'CombosDisponibles', sortable: true, center: true, width: '11rem' },
+		{ name: 'ID Combo', selector: 'idCombo', sortable: true, center: true },
+		{
+			name: '',
+			selector: '',
+			center: true,
+			width: '6.2rem',
+			cell: row => (
+				<p className='m-0 link-table'>Ver Detalle</p>
+			)
+		},
+		{
+			name: '',
+			selector: '',
+			center: true,
+			width: '7.1rem',
+			cell: row => (
+				<p
+					className='m-0 link-table'
+					value={row.IdLimite}
+					name={row.IdLimite}
+					onClick={() => createCombo(row.IdLimite)}
+				>
+					Crear Combo
+				</p>
+			),
+		},
+		{
+			name:'',
+			selector: '',
+			center: true,
+			width: '3rem',
+			cell: row => (
+				<img
+					src={TrashIcon}
+					alt='Trash icon'
+					style={{ height:'18px', width: '14px', cursor:'pointer' }}
+					value={row.sku}
+					name={row.sku}
+					onClick={ 'e => handleDeselectOption(e)'}
+				/>
+			)
+		}
+	];
+
 
 	const component = loading ? (
 		<Spinner />
@@ -62,8 +108,8 @@ const CombosTable = () => {
 				customStyles={customStylesCT}
 				paginationComponentOptions={optionsPagination}
 				noDataComponent={<span>No se encontró ningún elemento</span>}
-				paginationResetDefaultPage={resetPaginationToggle}
-				subHeaderComponent={subHeaderComponentMemo}
+				// paginationResetDefaultPage={resetPaginationToggle}
+				// subHeaderComponent={subHeaderComponentMemo}
 				dense
 				striped
 				fixedHeader

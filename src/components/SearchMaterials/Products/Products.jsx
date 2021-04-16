@@ -287,8 +287,8 @@ const Products = ({ setView, setValue, products, handleButtonActiveQuota }) => {
 											style={{ height: '28px', fontSize: '14px' }}
 											className='text-center'
 											name='cantidad'
-											placeholder='0'
-											value={item.cantidad}
+											placeholder='-'
+											value={'-'}
 											// onChange={handleInputChange}
 											fixedDecimalLength={2}
 											disabled
@@ -394,14 +394,14 @@ const Products = ({ setView, setValue, products, handleButtonActiveQuota }) => {
 									<Input
 										type='number'
 										min='1'
-										placeholder='0'
+										placeholder='-'
 										className='text-center'
 										style={{ height: '28px', fontSize: '14px', width: '79px' }}
 										disabled
 									/>
 								</Col>
 								<Col sm='1' md='1' className='d-flex align-items-center justify-content-center py-1'>
-									<p className='m-0 text-summary'>{formatterPesos.format(item.total)}</p>
+									<p className='m-0 text-summary'>{'-'}</p>
 								</Col>
 								<Col sm='1' md='1' className='d-flex align-items-center justify-content-center py-1'>
 									<p className='m-0 text-summary'>{formatterPesos.format(item.totalImpuestos)}</p>

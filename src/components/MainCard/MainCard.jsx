@@ -7,6 +7,10 @@ const MainCard = ({ image, text, description, classNameHover, onClick }) => {
 		<div
 			className={`text-center main-card ${ classNameHover } py-3 mt-3`}
 			onClick={onClick}
+			style={{
+				width:291,
+				height: 419
+			}}
 		>
 			<img
                 src={image}
@@ -34,7 +38,7 @@ const MainCard = ({ image, text, description, classNameHover, onClick }) => {
 					fontFamily: 'Roboto, sans-serif',
 					fontSize: '12px',
 					color: '#8a8a8a',
-                    padding: '0 5rem'
+                    padding: '0 4rem'
 				}}
 			>
 				{ description }

@@ -12,12 +12,20 @@
  *
  */
 import React, { useState } from 'react'
+import { Link, useHistory } from 'react-router-dom';
 import { Dropdown, DropdownToggle, DropdownMenu, DropdownItem } from 'reactstrap'
 
 const LimiteCombos = () => {
+    const history = useHistory();
+
     const [dropdownOpen, setDropdownOpen] = useState(false);
 
     const toggle = () => setDropdownOpen(!dropdownOpen);
+
+    const redirectCreateLimitOfCombo = () => history.push('/combos-generator/crear-limite-combo');
+
+    const redirectAllLimitOfCombo = () => history.push('/combos-generator/limite-combos');
+
 
     return (
         <div>
@@ -26,9 +34,17 @@ const LimiteCombos = () => {
                     Limite de Combos
                 </DropdownToggle>
                 <DropdownMenu className='submenu'>
-                    <DropdownItem className='option'>Action 1</DropdownItem>
-                    <DropdownItem className='option'>Action 2</DropdownItem>
-                    <DropdownItem className='option'>Action 3</DropdownItem>
+                    <DropdownItem className='option' onClick={redirectCreateLimitOfCombo}>
+                        {/* <Link to={'/combos-generator/crear-limite-combo'}> */}
+                            Crear Límite del Combo
+                        {/* </Link> */}
+                    </DropdownItem>
+                    <DropdownItem className='option'>Agregados Recientemente</DropdownItem>
+                    <DropdownItem className='option'onClick={redirectAllLimitOfCombo}>
+                        {/* <Link to={'/combos-generator/limite-combos'}> */}
+                            Todos los Límites de Combos
+                        {/* </Link> */}
+                    </DropdownItem>
                 </DropdownMenu>
             </Dropdown>
         </div>

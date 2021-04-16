@@ -12,7 +12,7 @@
  */
 import React from 'react';
 import { Switch, Route, Redirect } from 'react-router-dom';
-import { Head, Nav, /*LimitOfCombos,*/ TabsCreateCombo } from '../components';
+import { Head, Nav, LimitOfCombos, TabsCreateCombo } from '../components';
 import Home from '../views/combos-generator/Home';
 import CreateLimitOfCombo from '../views/combos-generator/CreateLimitOfCombo';
 
@@ -39,6 +39,13 @@ const CombosGeneratorRouter = () => {
 						<Nav />
 					</header>
 					<TabsCreateCombo />
+				</Route>
+				<Route exact path='/combos-generator/limite-combos'>
+					<header>
+						<Head />
+						<Nav />
+					</header>
+					<LimitOfCombos />
 				</Route>
 				<Redirect to='/combos-generator' />
 			</Switch>

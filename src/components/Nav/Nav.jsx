@@ -48,7 +48,7 @@ const useStyles = makeStyles(theme => ({
 const Nav = () => {
 	const classes = useStyles();
 	return (
-		<Row className='my-0 d-flex align-items-center'>
+		<Row className='my-0 d-flex align-items-center pl-4'>
 			<Col sm='9' md='9' className='d-flex ml-3'>
 				<div className='mr-4'>
 					<img src={gridImage} alt='Grid icon' />

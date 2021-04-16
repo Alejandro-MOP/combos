@@ -15,25 +15,37 @@ import React, { useState } from 'react';
 import { Link } from 'react-router-dom';
 import { Dropdown, DropdownItem, DropdownToggle, DropdownMenu } from 'reactstrap';
 
+import { ModalCreateCombo } from '../../../index';
+
 const Combos = () => {
 	const [dropdownOpen, setDropdownOpen] = useState(false);
+	const [modal, setModal] = useState(false);
 
-	const toggle = () => setDropdownOpen(!dropdownOpen);
+	const toggleDropDownMenu = () => setDropdownOpen(!dropdownOpen);
+	const toggleModal = () => setModal(!modal);
 
 	return (
 		<div>
-			<Dropdown nav isOpen={dropdownOpen} toggle={toggle}>
+			<Dropdown nav isOpen={dropdownOpen} toggle={toggleDropDownMenu}>
 				<DropdownToggle nav caret className='text pl-1'>
 					Combos
 				</DropdownToggle>
 				<DropdownMenu className='submenu'>
-					<DropdownItem className='option'>
-						<Link to={'/crear-combo'}>Crear Combo</Link>
+					<DropdownItem
+						className='option'
+						onClick={toggleModal}
+					>
+							Crear Combo
 					</DropdownItem>
 					<DropdownItem className='option'>Detalle</DropdownItem>
 					<DropdownItem className='option'>Relacionado</DropdownItem>
 				</DropdownMenu>
 			</Dropdown>
+
+			<ModalCreateCombo
+				toggle={toggleModal}
+				modal={modal}
+			/>
 		</div>
 	);
 };

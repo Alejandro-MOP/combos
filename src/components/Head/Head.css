@@ -1,10 +1,12 @@
-.combos-generator {
+.combos-generator-head {
   width: 296px;
   height: 55px;
   font-family: 'Roboto', sans-serif;
   font-weight: bold;
   font-size: 24px;
   color: #1890ff;
+  background:none!important;
+  box-shadow: none!important;
 }
 
 hr {

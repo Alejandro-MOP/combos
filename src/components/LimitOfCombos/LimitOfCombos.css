@@ -118,3 +118,12 @@ input[type="radio"]:checked {
 	outline: none;
 	box-shadow: none;
 }
+
+.link-table{
+	font-family: 'Inter', sans-serif;
+	font-size: 12px;
+	font-weight: 600;
+	text-decoration: underline;
+	color: #1890ff;
+	cursor: pointer;
+}

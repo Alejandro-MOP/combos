@@ -42,6 +42,7 @@ const Home = () => {
 							text={'Crear combo con límite existente'}
 							description={'Podrás usar un mismo ID límite pero con diferentes materiales'}
 							classNameHover={'main-card-magenta'}
+							onClick={ () => history.push('combos-generator/limite-combos') }
 						/>
 					</Col>
 					<Col sm='4' md='4'>
@@ -54,9 +55,9 @@ const Home = () => {
 					</Col>
 				</Row>
 				<Row className='mt-4'>
-					<Container className='text-center'>
+					<Container className='text-center pr-5'>
 						<p
-							className='my-3'
+							className='mt-4'
 							style={{
 								fontFamily: 'Robot, sans-serif',
 								fontWeight: 'bold',

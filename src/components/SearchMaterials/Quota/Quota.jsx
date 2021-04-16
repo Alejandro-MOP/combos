@@ -376,7 +376,7 @@ const Quota = ({ setView, setValue, products }) => {
 										<Input
 											type='number'
 											min='1'
-											placeholder='0'
+											placeholder='-'
 											className='text-center'
 											style={{ height: '28px', fontSize: '14px', width: '79px' }}
 											disabled
@@ -387,7 +387,7 @@ const Quota = ({ setView, setValue, products }) => {
 										md='1'
 										className='d-flex align-items-center justify-content-center py-1'
 									>
-										<p className='m-0 text-summary'>{formatterPesos.format(item.total)}</p>
+										<p className='m-0 text-summary'>{'-'}</p>
 									</Col>
 									<Col
 										sm='1'

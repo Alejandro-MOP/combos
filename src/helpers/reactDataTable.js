@@ -11,7 +11,6 @@
  *
 */
 
-
 //for al tables
 export const optionsPagination = {
     rowsPerPageText: 'Registros por página',
@@ -52,17 +51,69 @@ export const columnsSalesOffice = [
 
 //for SalesOrganization.jsx
 export const columnsSalesOrganziation = [
-	{ name: 'Número SAP', selector: 'id', sortable: true },
-	{ name: 'Nombre', selector: 'nombre', sortable: true },
-	{ name: 'Dirección Regional de Ventas', selector: 'direccionRegionalVentas', sortable: true }
+    { name: 'Número SAP', selector: 'id', sortable: true },
+    { name: 'Nombre', selector: 'nombre', sortable: true },
+    { name: 'Dirección Regional de Ventas', selector: 'direccionRegionalVentas', sortable: true }
 ];
 
 //for CombosTable.jsx
-export const columnsCombosTable = [
-	{ name: '', selector: 'id', sortable: true, width: '5rem' },
-	{ name: 'ID Límite', selector: 'IdLimite', sortable: true },
-	{ name: 'Nivel del Combo', selector: 'nivelCombo', sortable: true },
-	{ name: 'Estructura de Ventas', selector: 'estructuraVenta', sortable: true },
-	{ name: 'Combos Permitidos', selector: 'combosPermitidos', sortable: true },
-	{ name: 'Combos Disponibles', selector: 'CombosDisponibles', sortable: true }
-];
+// export const columnsCombosTable = [
+//     { name: '', selector: 'id', sortable: true, width: '5rem', center: true },
+//     { name: 'ID Límite', selector: 'IdLimite', sortable: true },
+//     { name: 'Nivel del Combo', selector: 'nivelCombo', sortable: true, width: '15rem' },
+//     { name: 'Estructura de Ventas', selector: 'estructuraVenta', sortable: true, width: '12rem' },
+//     { name: 'Combos Permitidos', selector: 'combosPermitidos', wrap: true, sortable: true, center: true, width: '11rem' },
+//     { name: 'Combos Disponibles', selector: 'CombosDisponibles', sortable: true, center: true, width: '11rem' },
+//     { name: 'ID Combo', selector: 'idCombo', sortable: true, center: true },
+//     {
+//         name: '',
+//         selector: '',
+//         center: true,
+//         width: '6.2rem',
+//         cell: row => (
+//             <p className='m-0' style={{
+//                 fontFamily: 'Inter, sans-serif',
+//                 fontSize: '12px',
+//                 fontWeight: '600',
+//                 textDecoration: 'underline',
+//                 color: '#1890ff',
+//                 cursor: 'pointer'
+//             }}>Ver Detalle</p>
+//         )
+//     },
+//     {
+//         name: '',
+//         selector: '',
+//         center: true,
+//         width: '7.1rem',
+//         cell: row => (
+//             <p className='m-0' style={{
+//                 fontFamily: 'Inter, sans-serif',
+//                 fontSize: '12px',
+//                 fontWeight: '600',
+//                 textDecoration: 'underline',
+//                 color: '#1890ff',
+//                 cursor: 'pointer'
+//             }}>Crear Combo</p>
+//         )
+//     },
+//     {
+//         name:'',
+//         selector: '',
+//         center: true,
+//         cell: row => (
+//             <img
+// 					src={TrashIcon}
+// 					alt='Trash icon'
+// 					style={{
+// 						height:'18px',
+// 						width: '14px',
+// 						cursor:'pointer'
+// 					}}
+// 					value={row.sku}
+// 					name={row.sku}
+// 					onClick={ e => handleDeselectOption(e)}
+// 				/>
+//         )
+//     }
+// ];
